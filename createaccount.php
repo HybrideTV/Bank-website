@@ -11,15 +11,14 @@
 // ENVOI MAIL
 
       $to = $_POST["email"];
-      $from = "no-reply@credit-agricole.fr"; 
+      $from = "no-reply@fake-agricole.fr"; 
       $subject = "Bienvenue au crédit agricole !";
       $message = 'Votre identifiant de connexion est :'.$identifiant;
-      $headers = "From: no-reply@credit-agricole.fr";
+      $headers = "From: no-reply@fake-agricole.fr";
 
       $req = $bdd->prepare('INSERT INTO account(email, nom, prenom, mdp, identifiant, argent) VALUES (?, ?, ?, ?, ?, 50)');
 
       $req->execute(array($email, $nom, $prenom, $mdp, $identifiant));
-      mail("mickael.liermain@outlook.fr", "Essai", "Coucou", "");
 
     }
 ?>
